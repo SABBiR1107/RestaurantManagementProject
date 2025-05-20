@@ -28,7 +28,13 @@ Route::get('/delete_food/{id}',[AdminController::class,'delete_food'])->name('de
 
 Route::post('/edit_food/{id}',[AdminController::class,'edit_food'])->name('edit_food');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');   
+Route::get('/home', [HomeController::class,'index'])->name('home');   
+
+Route::post('/add_cart/{id}', [HomeController::class,'add_cart'])->name('add_cart');
+
+Route::get('/my_cart', [HomeController::class,'my_cart'])->name('my_cart');
+
+Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart'])->name('remove_cart');
 
 Route::middleware([
     'auth:sanctum',

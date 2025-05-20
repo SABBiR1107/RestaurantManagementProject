@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -54,7 +55,7 @@ class AdminController extends Controller
     function update_food($id)
     {
         $data = Food::find($id);
-        return view('admin.update_food', compact('food'));
+        return view('admin.update_food', compact('data'));
     }
     function edit_food(Request $request, $id)
     {
