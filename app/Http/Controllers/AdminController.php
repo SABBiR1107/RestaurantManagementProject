@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
+use App\Models\Order;
 use App\Models\User;
+use App\Models\Cart;
+use App\Models\Book;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -17,6 +21,11 @@ class AdminController extends Controller
         return view('admin.add_food');
     }
     
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home');
+    }
 
     function upload_food(Request $request)
     {
@@ -69,4 +78,39 @@ class AdminController extends Controller
         $data->save();
         return redirect()->back()->with('message', 'Food Updated Successfully');    
         }
+
+    function orders()
+    {
+        $data = Order::all();
+        return view('admin.order', compact('data'));
+    }
+    
+    function on_the_way($id)
+    {
+        $data = Order::find($id);
+        $data->delivery_status = 'on the way';
+        $data->save();
+        return redirect()->back()->with('message', 'Food is on the way');
+    }
+
+    function delivered($id)
+    {
+        $data = Order::find($id);
+        $data->delivery_status = 'delivered';
+        $data->save();
+        return redirect()->back()->with('message', 'Food Delivered Successfully');
+    }
+    function canceled($id)
+    {
+        $data = Order::find($id);
+        $data->delivery_status = 'canceled';
+        $data->save();
+        return redirect()->back()->with('message', 'Food Order Canceled');
+    }
+
+    public function reservations()
+    {
+        $data = Book::all();
+        return view('admin.reservations', compact('data'));
+    }
 }

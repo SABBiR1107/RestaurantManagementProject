@@ -1,17 +1,26 @@
 <!--  About Section  -->
-    <div id="about" class="container-fluid wow fadeIn" id="about"data-wow-duration="1.5s">
-        <div class="row">
-            <div class="col-lg-6 has-img-bg"></div>
-            <div class="col-lg-6">
-                <div class="row justify-content-center">
-                    <div class="col-sm-8 py-5 my-5">
-                        <h2 class="mb-4">About Us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quisquam accusantium nostrum modi, nemo, officia veritatis ipsum facere maxime assumenda voluptatum enim! Labore maiores placeat impedit, vero sed est voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias dicta autem, maiores doloremque quo perferendis, ut obcaecati harum, <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum necessitatibus iste,
-                        nulla recusandae porro minus nemo eaque cum repudiandae quidem voluptate magnam voluptatum? <br>Nobis, saepe sapiente omnis qui eligendi pariatur. quis voluptas. Assumenda facere adipisci quaerat. Illum doloremque quae omnis vitae.</p>
-                        <p><b>Lonsectetur adipisicing elit. Blanditiis aspernatur, ratione dolore vero asperiores explicabo.</b></p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab itaque modi, reprehenderit fugit soluta, molestias optio repellat incidunt iure sed deserunt nemo magnam rem explicabo vitae. Cum, nostrum, quidem.</p>
-                    </div>
+<div id="about" class="container-fluid wow fadeIn" id="about"data-wow-duration="1.5s">
+    <div class="row">
+        <div class="col-lg-6 has-img-bg"></div>
+        <div class="col-lg-6">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 py-5 my-5">
+                    <h2 class="mb-4">About Us</h2>
+                    Welcome to East Meets Feast – Where Cultures Come Together on a Plate.
+
+                    At East Meets Feast, we bring you the bold and delicious flavors of Asia, combining traditional
+                    dishes with a modern twist. Our goal is to connect people through the joy of great food.
+
+                    Inspired by the street food of Bangkok and the flavors of places like Kyoto, our menu offers a
+                    variety of Asian favorites made with fresh ingredients and lots of care. Whether you want something
+                    spicy, comforting, or unique, we’ve got something you’ll love.
+
+                    We believe every meal should be a great experience, so we focus on tasty food, beautiful
+                    presentation, and a warm, welcoming space.
+
+                    Come enjoy the feast — and see how the East meets the best.
                 </div>
             </div>
         </div>
     </div>
+</div>

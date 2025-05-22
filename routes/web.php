@@ -16,6 +16,8 @@ use App\Http\Controllers\AdminController;
 */
 Route::get('/',[HomeController::class,'Home'])->name('home');
 
+Route::get('logout',[AdminController::class,'logout'])->name('logout');
+
 Route::get('/add_food',[AdminController::class,'add_food'])->name('add_food');
 
 Route::get('/view_food',[AdminController::class,'view_food']) ->name('view_food');
@@ -35,6 +37,20 @@ Route::post('/add_cart/{id}', [HomeController::class,'add_cart'])->name('add_car
 Route::get('/my_cart', [HomeController::class,'my_cart'])->name('my_cart');
 
 Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart'])->name('remove_cart');
+
+Route::post('/confirm_order', [HomeController::class,'confirm_order'])->name('confirm_order');
+
+Route::get('/orders', [AdminController::class,'orders'])->name('orders');
+
+Route::get('/on_the_way/{id}', [AdminController::class,'on_the_way'])->name('on_the_way');
+
+Route::get('/delivered/{id}', [AdminController::class,'delivered'])->name('delivered');
+
+Route::get('/canceled/{id}', [AdminController::class,'canceled'])->name('canceled');
+
+Route::post('/book_table', [HomeController::class,'book_table'])->name('book_table');
+
+Route::get('/reservations', [AdminController::class,'reservations'])->name('reservations');
 
 Route::middleware([
     'auth:sanctum',

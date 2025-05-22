@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Doctrine\CarbonDoctrineType;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Book;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Food;
@@ -25,7 +28,13 @@ class HomeController extends Controller
             }
             else
             {
-                return view('admin.index');
+                $total_user = User::where('usertype', '=', 'user')->count();
+                $total_food = Food::count();
+                $total_order = Order::count();
+                $total_deliverd = Order::where('delivery_status', '=', 'delivered')->count();
+                
+                return view('admin.index', compact('total_user', 'total_food', 'total_order', 'total_deliverd'));
+               
             }
         }
     
@@ -61,6 +70,36 @@ class HomeController extends Controller
         $data->delete();
 
         return redirect()->back();
+    }
+
+    public function confirm_order(Request $request)
+    {
+        $userid = Auth()->user()->id;
+        
+        $cart = Cart::where('user_id', '=',$userid)->get();
+
+        foreach ($cart as $cart)
+        {
+            $order = new Order;
+
+            $order->name = $request->name;
+            $order->email = $request->email;
+            $order->phone = $request->phone;
+            $order->address = $request->address;
+
+            $order->titile = $cart->titile;
+            $order->quantity = $cart->quantity;
+            $order->price = $cart->price;
+            $order->food_image = $cart->image;
+            $order->delivery_status = 'in progress';
+            $order->save();
+            $cart_id = $cart->id;
+            $cart_item = Cart::find($cart_id);
+            $cart_item->delete();
+
+
+        }
+        return redirect()->back()->with('message', 'Order Confirmed Successfully');
     }
 
     public function add_cart(Request $request, $id)
@@ -103,5 +142,18 @@ class HomeController extends Controller
             return redirect('login');
 
         }
+    }
+    public function book_table(Request $request)
+    {
+        $data = new Book;
+
+        $data->phone = $request->phone;
+        $data->guest = $request->guest;
+        $data->time = $request->time;
+        $data->date = $request->date;
+
+        $data->save();
+
+        return redirect()->back()->with('message', 'Table Booked Successfully');
     }
 }

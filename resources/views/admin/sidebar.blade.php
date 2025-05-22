@@ -11,22 +11,29 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+                <li class="active"><a href="{{ 'home' }}"> <i class="icon-home"></i>Home </a></li>
                 <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
                 <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
                 <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Food</a>
-                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="{{ url('add_food') }}">Add Food</a></li>
-                    <li><a href="{{ url('view_food') }}">View Food</a></li>
-                  </ul>
-                </li>
-                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
-        </ul><span class="heading">Extras</span>
-        <ul class="list-unstyled">
-          <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-chart"></i>Demo </a></li>
-        </ul>
+                <li>
+    <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">
+        <i class="icon-chart"></i> Food
+    </a>
+    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+        <li>
+            <a href="{{ url('add_food') }}">
+                <i class="fa fa-plus-circle"></i> Add Food
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('view_food') }}">
+                <i class="fa fa-eye"></i> View Food
+            </a>
+        </li>
+    </ul>
+</li>
+                <li><a href="{{ url('orders') }}"> <i class="fa fa-shopping-cart"></i> Orders </a></li>
+                <li><a href="{{ url('reservations') }}"> <i class="fa fa-users"></i> Reservations </a></li>
+       
       </nav>
       <!-- Sidebar Navigation end-->

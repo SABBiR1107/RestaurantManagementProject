@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
@@ -150,6 +150,33 @@
     </div>
 </div>
 
+<div class="container my-5" style="max-width: 500px;">
+    <div class="p-4 rounded shadow" style="background: #23272b;">
+        <h3 class="mb-4 text-center" style="color: #ffc107; letter-spacing: 1px;">Confirm Your Order</h3>
+        <form action="{{ url('confirm_order') }}" method="post">
+            @csrf
+            <div class="form-group mb-3 text-left">
+                <label for="name" class="text-light">Name</label>
+                <input type="text" value="{{ Auth()->user()->name }}" name="name" class="form-control" placeholder="Write your name" required>
+            </div>
+            <div class="form-group mb-3 text-left">
+                <label for="email" class="text-light">Email</label>
+                <input type="email" value="{{ Auth()->user()->email }}" name="email" class="form-control" placeholder="Write your email" required>
+            </div>
+            <div class="form-group mb-3 text-left">
+                <label for="phone" class="text-light">Phone</label>
+                <input type="number" value="{{ Auth()->user()->phone }}" name="phone" class="form-control" placeholder="Write your Phone" required>
+            </div>
+            <div class="form-group mb-4 text-left">
+                <label for="address" class="text-light">Address</label>
+                <input type="text" value="{{ Auth()->user()->address }}" name="address" class="form-control" placeholder="Write your address" required>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Confirm Order" class="btn btn-warning px-4 font-weight-bold">
+            </div>
+        </form>
+    </div>
+</div>
     <!--  Back to top button  -->
     <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="#">
         <i class="ti-arrow-up"></i>
