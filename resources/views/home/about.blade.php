@@ -6,9 +6,9 @@
             <div class="row justify-content-center">
                 <div class="col-sm-8 py-5 my-5">
                     <h2 class="mb-4">About Us</h2>
-                    Welcome to East Meets Feast – Where Cultures Come Together on a Plate.
+                    Welcome to The Velvet Spoon – Where Cultures Come Together on a Plate.
 
-                    At East Meets Feast, we bring you the bold and delicious flavors of Asia, combining traditional
+                    At The Velvet Spoon, we bring you the bold and delicious flavors of Asia, combining traditional
                     dishes with a modern twist. Our goal is to connect people through the joy of great food.
 
                     Inspired by the street food of Bangkok and the flavors of places like Kyoto, our menu offers a

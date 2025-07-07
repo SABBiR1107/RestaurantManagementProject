@@ -6,7 +6,6 @@
                 <div class="row">
                     
                 @foreach ($data as $data)
-
                     <div class="col-md-4">
                         <div class="card bg-transparent border my-3 my-md-0">
                             <img src="food_img/{{$data->image}}"alt="photoLoading" class="rounded-0 card-img-top mg-responsive">

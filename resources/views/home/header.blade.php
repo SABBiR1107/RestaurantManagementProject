@@ -20,15 +20,13 @@
             </ul>
             <a class="navbar-brand m-auto" href="{{ url('/') }}">
                 <img src="assets/imgs/logo.png" class="brand-img" alt="">
-                <span class="brand-txt">East Meets Feast</span>
+                <span class="brand-txt">The Velvet Spoon</span>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#blog">Food<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#testmonial">Reviews</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
@@ -37,7 +35,7 @@
                     @auth
 
                     <li class="nav-item">
-                            <a href="{{ url('my_cart') }}" class="btn btn-primary ml-xl-4">Cart</a>
+                            <a href="{{ url('my_cart') }}" class="btn btn-primary ml-xl-5 ml-4">Cart</a>
                         </li>
 
                         <li class="nav-item">
@@ -48,7 +46,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="btn btn-primary ml-xl-4">Login</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary ml-xl-5 ml-4">Login</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('register') }}"  class="btn btn-primary ml-xl-4">Register</a>
@@ -62,8 +60,10 @@
     <!-- header -->
     <header id="home" class="header">
         <div class="overlay text-white text-center">
-            <h1 class="display-2 font-weight-bold my-3">East Meets Feast</h1>
+            <h1 class="display-2 font-weight-bold my-3">The Velvet Spoon</h1>
             <h2 class="display-4 mb-5">Always fresh &amp; Delightful</h2>
             <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a>
         </div>
     </header>
+
+    

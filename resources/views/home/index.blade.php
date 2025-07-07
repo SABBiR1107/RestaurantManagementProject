@@ -15,8 +15,6 @@
     
     @include('home.blog')
 
-    @include('home.review')
-
     @include('home.contact')
    
 
