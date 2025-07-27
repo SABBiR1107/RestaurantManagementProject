@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,14 @@ Route::get('/canceled/{id}', [AdminController::class,'canceled'])->name('cancele
 Route::post('/book_table', [HomeController::class,'book_table'])->name('book_table');
 
 Route::get('/reservations', [AdminController::class,'reservations'])->name('reservations');
+
+Route::get('/home', [HomeController::class,'index'])->name('home');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 Route::middleware([
     'auth:sanctum',

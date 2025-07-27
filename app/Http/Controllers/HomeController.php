@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Book;
-
 use Illuminate\Support\Facades\Auth;
 use App\Models\Food;
 use App\Models\Cart;
@@ -23,8 +22,8 @@ class HomeController extends Controller
 
             if ($usertype == 'user')
             {
-                
-                return view('home.index');
+                $data = Food::all(); 
+                return view('home.index', compact('data'));
             }
             else
             {
@@ -143,17 +142,36 @@ class HomeController extends Controller
 
         }
     }
+
     public function book_table(Request $request)
     {
         $data = new Book;
 
+        $data->name = $request->name;
+
+        $data->email = $request->email;
+
         $data->phone = $request->phone;
-        $data->guest = $request->guest;
-        $data->time = $request->time;
+
         $data->date = $request->date;
+
+        $data->time = $request->time;
+
+        $data->people = $request->people;
+
+        $data->message = $request->message;
 
         $data->save();
 
-        return redirect()->back()->with('message', 'Table Booked Successfully');
+        return redirect()->back();
+    }
+
+    // Helper method to get cart count for authenticated user
+    public static function getCartCount()
+    {
+        if (Auth::check()) {
+            return Cart::where('user_id', Auth::user()->id)->count();
+        }
+        return 0;
     }
 }

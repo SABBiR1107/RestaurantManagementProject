@@ -26,8 +26,8 @@
                 </li>
             </ul>
             <a class="navbar-brand m-auto" href="#">
-                <img src="assets/imgs/logo.png" class="brand-img" alt="">
-                <span class="brand-txt">East Meets Feast</span>
+                <img src="assets/imgs/logo.png" class="brand-img" alt="Logo" style="max-width: 120px; height: auto; border-radius: 9%;">
+                <span class="brand-txt">The Velvet Spoon</span>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -44,8 +44,13 @@
                     @auth
 
                     <li class="nav-item">
-                            <a href="{{ url('my_cart') }}" class="btn btn-primary ml-xl-4">Cart</a>
-                        </li>
+                        <a href="{{ url('my_cart') }}" class="btn btn-primary ml-xl-4 position-relative cart-btn">
+                            <i class="ti-shopping-cart mr-1"></i>Cart
+                            @if($cartCount > 0)
+                                <span class="cart-badge">{{ $cartCount }}</span>
+                            @endif
+                        </a>
+                    </li>
 
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST" style="display:inline;">
@@ -69,38 +74,147 @@
     <!-- header -->
 
    <style>
-    /* Custom styles for the cart table and section */
-    .cart-section {
-        padding: 40px 0;
-        border-radius: 16px;
-        margin: 140px auto 40px auto; /* Increased top margin for more space from navbar */
-        max-width: 900px;
-        background: rgba(30, 30, 30, 0.95);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+body {
+    background: #23272b;
+}
+.custom-navbar {
+    background: #23272b !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.navbar-brand .brand-img {
+    border-radius: 10px !important;
+}
+.btn-primary, .btn-danger, .btn-warning {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.btn-primary:hover, .btn-danger:hover, .btn-warning:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.cart-section {
+    padding: 48px 0 32px 0;
+    border-radius: 24px;
+    margin: 140px auto 40px auto;
+    max-width: 900px;
+    background: #181a1b;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    border: 1px solid #343a40;
+}
+.section-title {
+    color: #ffc107;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+.cart-table {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.cart-table th, .cart-table td {
+    padding: 20px 16px;
+    vertical-align: middle;
+    border: none;
+}
+.cart-table th {
+    background: #23272b;
+    color: #ffc107;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+.cart-table tr {
+    background: #181a1b;
+    transition: background 0.2s;
+}
+.cart-table tr:hover {
+    background: #23272b;
+}
+.cart-table img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ffc107;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.cart-btn {
+    position: relative;
+    margin-right: 16px; /* Add space between cart and logout */
+}
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff214f;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    min-width: 22px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.total-card {
+    background: #23272b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.total-card h4 {
+    color: #ffc107;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.confirm-section {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: #23272b;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 2.5rem 2rem;
+}
+.confirm-section h3 {
+    color: #ffc107;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.form-control {
+    border-radius: 8px;
+    background: #181a1b;
+    color: #fff;
+    border: 1px solid #444;
+}
+.form-control:focus {
+    border-color: #ffc107;
+    background: #23272b;
+    color: #fff;
+    box-shadow: 0 0 0 2px #ffc10744;
+}
+@media (max-width: 991.98px) {
+    .cart-section, .confirm-section {
+        margin: 100px 8px 20px 8px;
+        padding: 20px 8px;
+        max-width: 100%;
     }
     .cart-table th, .cart-table td {
-        padding: 16px 12px;
-        vertical-align: middle;
+        padding: 12px 6px;
     }
-    .cart-table th {
-        background: #343a40;
-        color: #fff;
-        border: none;
+    .total-card {
+        padding: 1rem 1.2rem;
     }
-    .cart-table tr {
-        background: #23272b;
-        border-bottom: 1px solid #444;
-    }
-    .cart-table tr:last-child {
-        border-bottom: none;
-    }
-    .cart-table img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        border-radius: 8px;
-        border: 2px solid #fff;
-    }
+}
 </style>
 <br><br>
 
@@ -141,18 +255,19 @@
                 @endforeach
             
         </table>
-        <div class="my-4 p-4 rounded" style="background: #23272b; box-shadow: 0 2px 8px rgba(0,0,0,0.15); display: inline-block;">
-            <h4 class="mb-0" style="color: #ffc107; letter-spacing: 1px;">
+        <div class="total-card">
+            <h4 class="mb-0">
             <i class="ti-wallet mr-2"></i>
-            Total Price for the Cart = <span style="color: #fff;">{{ $total_price }}</span> <span style="font-size: 0.9em; color: #aaa;">Taka</span>
+            Total Price for the Cart = <span style="color: #fff;">{{ $total_price }}</span>
+            <span style="font-size: 0.9em; color: #aaa;">Taka</span>
             </h4>
         </div>
     </div>
 </div>
 
-<div class="container my-5" style="max-width: 500px;">
-    <div class="p-4 rounded shadow" style="background: #23272b;">
-        <h3 class="mb-4 text-center" style="color: #ffc107; letter-spacing: 1px;">Confirm Your Order</h3>
+<div class="container my-5" style="max-width: 100%;">
+    <div class="confirm-section">
+        <h3 class="text-center">Confirm Your Order</h3>
         <form action="{{ url('confirm_order') }}" method="post">
             @csrf
             <div class="form-group mb-3 text-left">

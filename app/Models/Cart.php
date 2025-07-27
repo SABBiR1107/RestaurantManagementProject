@@ -14,5 +14,6 @@ class Cart extends Model
         'quantity',
         'price',
         'image',
+        'user_id',
     ];
 }

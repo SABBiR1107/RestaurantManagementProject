@@ -21,7 +21,7 @@
    @include('home.footer')
 
     <!--  Back to top button  -->
-    <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="#">
+    <a id="back-to-top " data-toggle="tooltip " title="Back to Top" href="#">
         <i class="ti-arrow-up"></i>
     </a>
 
