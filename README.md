@@ -1,4 +1,4 @@
-![home](https://github.com/user-attachments/assets/957a307c-7830-49d7-be6f-4e6a70329f74)# 🍴 Restaurant Management Project
+🍴 Restaurant Management Project
 
 ![Laravel](https://img.shields.io/badge/Laravel-9.x-red?style=for-the-badge&logo=laravel)
 ![PHP](https://img.shields.io/badge/PHP-8.0+-blue?style=for-the-badge&logo=php)
