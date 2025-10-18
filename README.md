@@ -1,4 +1,4 @@
-# 🍴 Restaurant Management Project
+![home](https://github.com/user-attachments/assets/957a307c-7830-49d7-be6f-4e6a70329f74)# 🍴 Restaurant Management Project
 
 ![Laravel](https://img.shields.io/badge/Laravel-9.x-red?style=for-the-badge&logo=laravel)
 ![PHP](https://img.shields.io/badge/PHP-8.0+-blue?style=for-the-badge&logo=php)
@@ -28,19 +28,23 @@ This project will develop a large **Restaurant Management System** with the use 
 ## 📸 Website View
 
 ### 🔹 Home Page
-![Home Page](screenshots/home.png)
+![Home Page] ![home](https://github.com/user-attachments/assets/60d50156-a015-4fcd-9699-4a09c305b5eb)
+
 
 ### 🔹 Menu
-![Menu](screenshots/menu.png)
+![Menu] ![menu](https://github.com/user-attachments/assets/0d0a0dbf-fadd-46f4-97bb-bf8842288167)
+
 
 ### 🔹 Book Table
-![Book Table](screenshots/booktable.png)
+![Book Table] ![booktable](https://github.com/user-attachments/assets/c2d55ba7-81b4-4c1c-b9db-b9aa831522f8)
+
 
 ### 🔹 Admin Dashboard
-![Admin Dashboard](screenshots/admin.png)
+![Admin Dashboard] ![admin](https://github.com/user-attachments/assets/ae552b98-3f62-44c0-8671-be8eb5420d3d)
+
 
 ### 🔹 Order List
-![Order List](screenshots/orderlist.png)
+![Order List] ![orderlist](https://github.com/user-attachments/assets/352e1cd9-8d30-43a8-919b-c2f05df696d1)
 
 
 ---
