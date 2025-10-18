@@ -69,5 +69,13 @@ This project will develop a large **Restaurant Management System** with the use 
 🧰 **IDE / Tools:** VS Code, Composer, Node.js, NPM
 
 ---
+## 👨‍💻 Developer
+
+**Developed by Ashnaur Rahman**  
+Software Engineering at Daffodil International University
+
+## 📝 License
+
+This project is open source and available under the MIT License.
 
 ## Thank you 
